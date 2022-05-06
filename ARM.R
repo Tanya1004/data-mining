@@ -1,0 +1,10 @@
+library(arules)
+library(arulesViz)
+library(datasets)
+
+data("Groceries")
+itemFrequencyPlot(Groceries, topN=10)
+inspect(Groceries)
+rules<-apriori(Groceries, parameter = list(support=0.6, conf=0.6))
+print(rules)
+inspect(rules)
